@@ -49,3 +49,9 @@ Durante el desarrollo, surgieron varios desafíos lógicos y de validación.
   - **Solución:** Se identificó que el conjunto de datos debía estar ordenado. Se implementó un algoritmo de ordenamiento de burbuja (Para i... Para j...) para ordenar el arreglo numeros de menor a mayor. Posteriormente, se añadió la lógica condicional (Si n % 2 = 0) para manejar correctamente tanto conjuntos de datos pares como impares.
 - **Problema:** El flujo del programa era demasiado rápido, y los resultados desaparecían de la pantalla.
   - **Solución:** Se implementó una pausa táctica al final del bucle principal (Leer tecla;). Esto detiene la ejecución después de mostrar un resultado, forzando al programa a esperar una entrada (la tecla ENTER) antes de limpiar la pantalla y volver al menú principal.
+
+### INTEGRANTES:
+- Yerik Axel Rodríguez González
+- Natalie Guadalupe Lázaro Cortes
+- Ricardo Sosa Chico
+- Evelin Odette Acosta González
