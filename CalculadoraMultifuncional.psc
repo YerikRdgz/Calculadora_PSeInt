@@ -8,7 +8,7 @@ Proceso CalculadoraMultifuncional
         Escribir "2. Figuras Geométricas (Área, Radio, Diámetro)";
         Escribir "3. Estadística Básica";
         Escribir "4. Sucesión de Fibonacci";
-        Escribir "5. Salir";
+        Escribir "5. Salir ";
         Escribir "Selecciona una opción: ";
         Leer opcion;
 		
