@@ -22,3 +22,11 @@ La arquitectura del proyecto es modular, basada en un Proceso principal que act�
   - **Mediana:** Implementa un algoritmo de ordenamiento de burbuja (dos bucles Para anidados) para ordenar el arreglo. Una vez ordenado, comprueba si n es par (n % 2 = 0) o impar para encontrar el valor central o el promedio de los dos valores centrales.
   - **Moda:** Utiliza dos bucles Para anidados. El bucle externo recorre cada número, y el interno cuenta su frecuencia (frec). Se usan variables auxiliares (maxFrec, moda) para almacenar el valor más repetido.
 - **Fibonacci:** Pide el número de términos (n). Inicializa a = 0 y b = 1. Un bucle Para genera la secuencia calculando el siguiente término (c <- a + b) y actualizando los valores de a y b en cada iteración.
+
+## Propósito de cada Módulo
+- **Proceso CalculadoraMultifuncional:** Servir como el punto de entrada, controlador principal y gestor del flujo del programa.
+- **SubProceso OperacionesBasicas:** Juntar toda la lógica aritmética fundamental. Su propósito es proveer cálculos rápidos, incluyendo la validación de la división por cero.
+- **SubProceso MenuFiguras:** Agrupar y organizar todas las funciones de geometría. Su propósito es actuar como un índice temático, mejorando la navegación.
+- **SubProcesos Circulo, Cuadrado, Triangulo, Trapecio:** Calcular propiedades específicas de cada figura. Su propósito es validar que las dimensiones ingresadas (radio, lado, etc.) sean positivas (> 0) antes de aplicar las fórmulas matemáticas correspondientes.
+- **SubProceso Estadistica:** Proveer un análisis descriptivo básico de un conjunto de datos. Su propósito es demostrar los algoritmos para calcular la media, la mediana (requiriendo ordenamiento) y la moda (requiriendo conteo de frecuencias).
+- **SubProceso Fibonacci:** Generar una secuencia matemática clásica. Su propósito es demostrar el uso de bucles y la gestión de estado (variables a, b, c) para generar una serie.
