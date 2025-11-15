@@ -3,29 +3,29 @@
 ///////////////////////////////////////////////////////////
 
 Proceso CalculadoraMultifuncional
-    // Define la variable 'opcion' como Entero para guardar la selección del menú.
+    // Define la variable 'opcion' como Entero para guardar la selecciÃ³n del menÃº.
     Definir opcion Como Entero;
 	
-    // Inicia un ciclo que se repetirá hasta que el usuario elija la opción 5 (Salir).
+    // Inicia un ciclo que se repetirÃ¡ hasta que el usuario elija la opciÃ³n 5 (Salir).
     Repetir
-        // 'Limpiar Pantalla' borra la consola para mostrar el menú de forma clara.
+        // 'Limpiar Pantalla' borra la consola para mostrar el menÃº de forma clara.
         Limpiar Pantalla;
         Escribir "====== CALCULADORA MULTIFUNCIONAL ======";
-        Escribir "1. Operaciones Básicas";
-        Escribir "2. Figuras Geométricas (Área, Radio, Diámetro)";
-        Escribir "3. Estadística Básica";
-        Escribir "4. Sucesión de Fibonacci";
+        Escribir "1. Operaciones BÃ¡sicas";
+        Escribir "2. Figuras GeomÃ©tricas (Ãrea, Radio, DiÃ¡metro)";
+        Escribir "3. EstadÃ­stica BÃ¡sica";
+        Escribir "4. SucesiÃ³n de Fibonacci";
         Escribir "5. Salir";
-        Escribir "Selecciona una opción: ";
+        Escribir "Selecciona una opciÃ³n: ";
         Leer opcion;
 		
-        // Estructura de control 'Segun' (similar a switch) para ejecutar la acción elegida.
+        // Estructura de control 'Segun' (similar a switch) para ejecutar la acciÃ³n elegida.
         Segun opcion Hacer
             1:
                 // Llama al subproceso para realizar sumas, restas, etc.
                 OperacionesBasicas;
             2:
-                // Llama al subproceso que muestra el menú de figuras geométricas.
+                // Llama al subproceso que muestra el menÃº de figuras geomÃ©tricas.
                 MenuFiguras;
             3:
                 // Llama al subproceso para calcular media, mediana y moda.
@@ -34,72 +34,72 @@ Proceso CalculadoraMultifuncional
                 // Llama al subproceso para generar la secuencia de Fibonacci.
                 Fibonacci;
             5:
-                // Opción de salida.
+                // OpciÃ³n de salida.
                 Escribir "Saliendo...";
             De Otro Modo:
-                // Manejo de error si la opción no está entre 1 y 5.
-                Escribir "Opción no válida. Por favor, intenta de nuevo.";
+                // Manejo de error si la opciÃ³n no estÃ¡ entre 1 y 5.
+                Escribir "OpciÃ³n no vÃ¡lida. Por favor, intenta de nuevo.";
         FinSegun;
 		
-        // Pausa para que el usuario pueda ver el resultado antes de volver al menú.
+        // Pausa para que el usuario pueda ver el resultado antes de volver al menÃº.
         Escribir "Presiona ENTER para continuar...";
-        Leer basura; // Lee cualquier entrada para confirmar la continuación.
+		Esperar Tecla; // Lee cualquier entrada para confirmar la continuaciÃ³n.
 		
     Hasta Que opcion = 5;
 FinProceso
 
 
 ///////////////////////////////////////////////////////////
-//  SUBPROCESO: OPERACIONES BÁSICAS
+//  SUBPROCESO: OPERACIONES BÃSICAS
 ///////////////////////////////////////////////////////////
 
 SubProceso OperacionesBasicas 
-    // Define las variables para los números (a, b) y la operación (op) como Reales.
+    // Define las variables para los nÃºmeros (a, b) y la operaciÃ³n (op) como Reales.
     Definir a, b, op Como Real;
     
-    Escribir "OPERACIONES BÁSICAS";
+    Escribir "OPERACIONES BÃSICAS";
     Escribir "1. Suma";
     Escribir "2. Resta";
-    Escribir "3. Multiplicación";
-    Escribir "4. División";
-    Escribir "Selecciona la operación: ";
-    Leer op; // op solo se usa para el menú, pero se define como Real por si acaso.
+    Escribir "3. MultiplicaciÃ³n";
+    Escribir "4. DivisiÃ³n";
+    Escribir "Selecciona la operaciÃ³n: ";
+    Leer op; // op solo se usa para el menÃº, pero se define como Real por si acaso.
 	
-    Escribir "Ingresa el primer número: ";
+    Escribir "Ingresa el primer nÃºmero: ";
     Leer a;
 	
-    Escribir "Ingresa el segundo número: ";
+    Escribir "Ingresa el segundo nÃºmero: ";
     Leer b;
 	
     Segun op Hacer
         1: Escribir "Resultado de la Suma: ", a + b;
         2: Escribir "Resultado de la Resta: ", a - b;
-        3: Escribir "Resultado de la Multiplicación: ", a * b;
+        3: Escribir "Resultado de la MultiplicaciÃ³n: ", a * b;
         4:
-            // Validación crucial: Comprueba si el divisor (b) es cero.
+            // ValidaciÃ³n crucial: Comprueba si el divisor (b) es cero.
             Si b = 0 Entonces
                 Escribir "Error: No se puede dividir entre 0.";
             SiNo
-                Escribir "Resultado de la División: ", a / b;
+                Escribir "Resultado de la DivisiÃ³n: ", a / b;
             FinSi;
         De Otro Modo:
-            Escribir "Opción de operación inválida.";
+            Escribir "OpciÃ³n de operaciÃ³n invÃ¡lida.";
     FinSegun;
 FinSubProceso
 
 
 ///////////////////////////////////////////////////////////
-//  SUBPROCESO: MENÚ FIGURAS GEOMÉTRICAS
+//  SUBPROCESO: MENÃš FIGURAS GEOMÃ‰TRICAS
 ///////////////////////////////////////////////////////////
 
 SubProceso MenuFiguras
-    // Define la opción del submenú de figuras.
+    // Define la opciÃ³n del submenÃº de figuras.
     Definir op Como Entero;
-    Escribir "FIGURAS GEOMÉTRICAS";
-    Escribir "1. Círculo (Área, Radio, Diámetro)";
-    Escribir "2. Cuadrado (Área, Diagonal)";
-    Escribir "3. Triángulo (Área)";
-    Escribir "4. Trapecio (Área)";
+    Escribir "FIGURAS GEOMÃ‰TRICAS";
+    Escribir "1. CÃ­rculo (Ãrea, Radio, DiÃ¡metro)";
+    Escribir "2. Cuadrado (Ãrea, Diagonal)";
+    Escribir "3. TriÃ¡ngulo (Ãrea)";
+    Escribir "4. Trapecio (Ãrea)";
     Escribir "Selecciona una figura: ";
     Leer op;
 	
@@ -110,34 +110,34 @@ SubProceso MenuFiguras
         3: Triangulo;
         4: Trapecio;
         De Otro Modo:
-            Escribir "Opción inválida.";
+            Escribir "OpciÃ³n invÃ¡lida.";
     FinSegun;
 FinSubProceso
 
 
 ///////////////////////////////////////////////////////////
-//  SUBPROCESO: CÍRCULO
+//  SUBPROCESO: CÃRCULO
 ///////////////////////////////////////////////////////////
 
 SubProceso Circulo
-    // Define las variables para el radio (r), área y diámetro.
+    // Define las variables para el radio (r), Ã¡rea y diÃ¡metro.
     Definir r, area, diametro Como Real;
 	
     // Ciclo para asegurar que el radio ingresado sea un valor positivo.
     Repetir
-        Escribir "Ingresa el radio del círculo: ";
+        Escribir "Ingresa el radio del cÃ­rculo: ";
         Leer r;
     Hasta Que r > 0;
 	
-    // Cálculo del área (PI * radio^2).
+    // CÃ¡lculo del Ã¡rea (PI * radio^2).
     area <- PI * r * r;
-    // Cálculo del diámetro (2 * radio).
+    // CÃ¡lculo del diÃ¡metro (2 * radio).
     diametro <- r * 2;
 	
     Escribir "--- Resultados ---";
-    Escribir "Área: ", area;
+    Escribir "Ãrea: ", area;
     Escribir "Radio (Ingresado): ", r;
-    Escribir "Diámetro: ", diametro;
+    Escribir "DiÃ¡metro: ", diametro;
 FinSubProceso
 
 
@@ -146,7 +146,7 @@ FinSubProceso
 ///////////////////////////////////////////////////////////
 
 SubProceso Cuadrado
-    // Define variables para el lado, área y diagonal (diag).
+    // Define variables para el lado, Ã¡rea y diagonal (diag).
     Definir lado, area, diag Como Real;
     
     // Ciclo para asegurar que el lado ingresado sea un valor positivo.
@@ -155,23 +155,23 @@ SubProceso Cuadrado
         Leer lado;
     Hasta Que lado > 0;
 	
-    // Cálculo del área (lado * lado).
+    // CÃ¡lculo del Ã¡rea (lado * lado).
     area <- lado * lado;
-    // Cálculo de la diagonal (lado * raíz(2)). La función 'raiz()' es de PSeInt.
+    // CÃ¡lculo de la diagonal (lado * raÃ­z(2)). La funciÃ³n 'raiz()' es de PSeInt.
     diag <- lado * raiz(2);
 	
     Escribir "--- Resultados ---";
-    Escribir "Área: ", area;
+    Escribir "Ãrea: ", area;
     Escribir "Diagonal: ", diag;
 FinSubProceso
 
 
 ///////////////////////////////////////////////////////////
-//  SUBPROCESO: TRIÁNGULO
+//  SUBPROCESO: TRIÃNGULO
 ///////////////////////////////////////////////////////////
 
 SubProceso Triangulo
-    // Define variables para la base, altura (h) y área.
+    // Define variables para la base, altura (h) y Ã¡rea.
     Definir base, altura, area Como Real;
 	
     // Ciclo para asegurar que tanto la base como la altura sean positivas.
@@ -182,11 +182,11 @@ SubProceso Triangulo
         Leer altura;
     Hasta Que base > 0 Y altura > 0;
 	
-    // Cálculo del área ((base * altura) / 2).
+    // CÃ¡lculo del Ã¡rea ((base * altura) / 2).
     area <- (base * altura) / 2;
 	
     Escribir "--- Resultados ---";
-    Escribir "Área: ", area;
+    Escribir "Ãrea: ", area;
 FinSubProceso
 
 
@@ -195,7 +195,7 @@ FinSubProceso
 ///////////////////////////////////////////////////////////
 
 SubProceso Trapecio
-    // Define variables para la base mayor (b1), base menor (b2), altura (h) y área.
+    // Define variables para la base mayor (b1), base menor (b2), altura (h) y Ã¡rea.
     Definir b1, b2, h, area Como Real;
 	
     // Ciclo para asegurar que todas las dimensiones sean positivas.
@@ -208,46 +208,46 @@ SubProceso Trapecio
         Leer h;
     Hasta Que b1 > 0 Y b2 > 0 Y h > 0;
 	
-    // Cálculo del área de un trapecio (((b1 + b2) / 2) * h).
+    // CÃ¡lculo del Ã¡rea de un trapecio (((b1 + b2) / 2) * h).
     area <- ((b1 + b2) / 2) * h;
 	
     Escribir "--- Resultados ---";
-    Escribir "Área: ", area;
+    Escribir "Ãrea: ", area;
 FinSubProceso
 
 
 ///////////////////////////////////////////////////////////
-//  SUBPROCESO: ESTADÍSTICA (MEDIA, MEDIANA, MODA)
+//  SUBPROCESO: ESTADÃSTICA (MEDIA, MEDIANA, MODA)
 ///////////////////////////////////////////////////////////
 
 SubProceso Estadistica
-    // 'n' es la cantidad de números, 'i' es un contador.
-    Definir n, i Como Entero;
-    // Declara un arreglo para almacenar hasta 100 números.
-    Definir numeros[100] Como Real;
-    // Variables para los resultados estadísticos y la suma.
+    // 'n' es la cantidad de nÃºmeros, 'i' es un contador.
+    Definir n, i, num Como Entero;
+    // Declara un arreglo para almacenar hasta 100 nÃºmeros.
+    Dimension num[100];
+    // Variables para los resultados estadÃ­sticos y la suma.
     Definir suma, media, mediana, moda Como Real;
     // Variable auxiliar para el ordenamiento.
     Definir aux, maxFrec, frec, j Como Real;
 	
-    // Pide la cantidad de datos a ingresar, limitándolo entre 1 y 100.
+    // Pide la cantidad de datos a ingresar, limitÃ¡ndolo entre 1 y 100.
     Repetir
-        Escribir "¿Cuántos números deseas ingresar? (1-100)";
+        Escribir "Â¿CuÃ¡ntos nÃºmeros deseas ingresar? (1-100)";
         Leer n;
     Hasta Que n > 0 Y n <= 100;
 	
-    // Bucle para leer cada uno de los 'n' números y guardarlos en el arreglo.
+    // Bucle para leer cada uno de los 'n' nÃºmeros y guardarlos en el arreglo.
     Para i <- 1 Hasta n Con Paso 1 Hacer
-        Escribir "Número ", i, ": ";
-        Leer numeros[i];
+        Escribir "NÃºmero ", i, ": ";
+        Leer num[i];
     FinPara;
 	
-    Escribir "--- Cálculos Estadísticos ---";
+    Escribir "--- CÃ¡lculos EstadÃ­sticos ---";
 	
-    // 1. CÁLCULO DE LA MEDIA (PROMEDIO)
+    // 1. CÃLCULO DE LA MEDIA (PROMEDIO)
     suma <- 0;
     Para i <- 1 Hasta n
-        suma <- suma + numeros[i]; // Acumula la suma de todos los elementos.
+        suma <- suma + num[i]; // Acumula la suma de todos los elementos.
     FinPara;
     media <- suma / n; // Divide la suma total por la cantidad de elementos.
 	
@@ -256,76 +256,76 @@ SubProceso Estadistica
     Para i <- 1 Hasta n-1 // Bucle externo, recorre el arreglo n-1 veces.
         Para j <- 1 Hasta n-i // Bucle interno, reduce el rango en cada pasada.
             // Si el elemento actual es mayor que el siguiente, los intercambia.
-            Si numeros[j] > numeros[j+1] Entonces
-                aux <- numeros[j];
-                numeros[j] <- numeros[j+1];
-                numeros[j+1] <- aux;
+            Si num[j] > num[j+1] Entonces
+                aux <- num[j];
+                num[j] <- num[j+1];
+                num[j+1] <- aux;
             FinSi;
         FinPara;
     FinPara;
 	
-    // 3. CÁLCULO DE LA MEDIANA
+    // 3. CÃLCULO DE LA MEDIANA
     // Si la cantidad de datos (n) es PAR.
     Si n % 2 = 0 Entonces
-        // La mediana es el promedio de los dos números centrales.
-        mediana <- (numeros[n/2] + numeros[n/2 + 1]) / 2;
+        // La mediana es el promedio de los dos nÃºmeros centrales.
+        mediana <- (num[n/2] + num[n/2 + 1]) / 2;
     SiNo
         // Si la cantidad de datos (n) es IMPAR.
-        // La mediana es el valor central (índice (n+1)/2).
-        mediana <- numeros[(n + 1)/2];
+        // La mediana es el valor central (Ã­ndice (n+1)/2).
+        mediana <- num[(n + 1)/2];
     FinSi;
 	
-    // 4. CÁLCULO DE LA MODA
-    maxFrec <- 0; // Inicializa la frecuencia máxima encontrada.
+    // 4. CÃLCULO DE LA MODA
+    maxFrec <- 0; // Inicializa la frecuencia mÃ¡xima encontrada.
     moda <- 0;    // Inicializa el valor de la moda.
 	
-    Para i <- 1 Hasta n // Recorre cada número en el arreglo ordenado.
-        frec <- 0; // Reinicia el contador de frecuencia para el número actual.
+    Para i <- 1 Hasta n // Recorre cada nÃºmero en el arreglo ordenado.
+        frec <- 0; // Reinicia el contador de frecuencia para el nÃºmero actual.
         
-        Para j <- 1 Hasta n // Compara el número actual (i) con todos los demás.
-            Si numeros[i] = numeros[j] Entonces
+        Para j <- 1 Hasta n // Compara el nÃºmero actual (i) con todos los demÃ¡s.
+            Si num[i] = num[j] Entonces
                 frec <- frec + 1; // Incrementa la frecuencia si encuentra una coincidencia.
             FinSi;
         FinPara;
 		
-        // Si la frecuencia actual es mayor que la máxima registrada...
+        // Si la frecuencia actual es mayor que la mÃ¡xima registrada...
         Si frec > maxFrec Entonces
-            maxFrec <- frec;    // ...actualiza la frecuencia máxima.
-            moda <- numeros[i]; // ...y actualiza la Moda al número actual.
+            maxFrec <- frec;    // ...actualiza la frecuencia mÃ¡xima.
+            moda <- num[i]; // ...y actualiza la Moda al nÃºmero actual.
         FinSi;
     FinPara;
 	
     // Muestra los resultados calculados.
     Escribir "Media (Promedio): ", media;
     Escribir "Mediana (Valor Central): ", mediana;
-    Escribir "Moda (Valor más Repetido): ", moda;
+    Escribir "Moda (Valor mÃ¡s Repetido): ", moda;
 FinSubProceso
 
 
 ///////////////////////////////////////////////////////////
-//  SUBPROCESO: SUCESIÓN DE FIBONACCI
+//  SUBPROCESO: SUCESIÃ“N DE FIBONACCI
 ///////////////////////////////////////////////////////////
 
 SubProceso Fibonacci
-    // 'n' es la cantidad de términos, a, b, c son los números de la secuencia, 'i' es el contador.
+    // 'n' es la cantidad de tÃ©rminos, a, b, c son los nÃºmeros de la secuencia, 'i' es el contador.
     Definir n, a, b, c, i Como Entero;
 	
-    // Pide la cantidad de términos a generar, asegurando que sea positivo.
+    // Pide la cantidad de tÃ©rminos a generar, asegurando que sea positivo.
     Repetir
-        Escribir "¿Cuántos términos deseas generar? (>0)";
+        Escribir "Â¿CuÃ¡ntos tÃ©rminos deseas generar? (>0)";
         Leer n;
     Hasta Que n > 0;
 	
-    // Inicializa los dos primeros términos de la sucesión.
+    // Inicializa los dos primeros tÃ©rminos de la sucesiÃ³n.
     a <- 0;
     b <- 1;
 	
-    Escribir "Sucesión de Fibonacci:";
+    Escribir "SucesiÃ³n de Fibonacci:";
 	
-    Para i <- 1 Hasta n // Genera 'n' términos de la secuencia.
-        Escribir a;       // Imprime el término actual (a).
-        c <- a + b;       // El siguiente término (c) es la suma de los dos anteriores.
+    Para i <- 1 Hasta n // Genera 'n' tÃ©rminos de la secuencia.
+        Escribir a;       // Imprime el tÃ©rmino actual (a).
+        c <- a + b;       // El siguiente tÃ©rmino (c) es la suma de los dos anteriores.
         a <- b;           // 'a' toma el valor anterior de 'b'.
-        b <- c;           // 'b' toma el valor del nuevo término calculado (c).
+        b <- c;           // 'b' toma el valor del nuevo tÃ©rmino calculado (c).
     FinPara;
 FinSubProceso
